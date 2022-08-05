@@ -3,7 +3,7 @@ body {
 }
 
 .container {
-    background-color: darkblue;
+    background-color: black;
     max-width: fit-content;
     height: 832px;
 }
@@ -11,11 +11,15 @@ body {
 .sq {
     width: 50px;
     height: 50px;
-    background-color: blueviolet;
+    background-color: white;
     margin: 1px;
     float: left;
 }
 
 .clear {
     clear: both;
+}
+
+.red {
+    background-color: red;
 }
