@@ -1,4 +1,5 @@
 let con = document.querySelector('.container');
+let darkness = 1;
 
 
 let start = function (side) {
@@ -15,12 +16,22 @@ let start = function (side) {
     return
 }
 
+let darker = function(red, green, blue) {
+    red = red * darkness;
+    green = green * darkness;
+    blue = blue * darkness;
+    darkness -= 0.05;
+    return `rgb(${red}, ${green}, ${blue})`;
+}
+
 let colorPicker = function () {
     let red = Math.floor(Math.random() * 256);
     let green = Math.floor(Math.random() * 256);
     let blue = Math.floor(Math.random() * 256);
-    return `rgb(${red}, ${green}, ${blue})`;
+    return darker(red, green, blue);
 }
+
+
 
 let draw = function () {
     let sq = document.querySelectorAll('.sq');
@@ -30,6 +41,7 @@ let draw = function () {
 let reset = function () {
     let sq = document.querySelectorAll('.sq');
     sq.forEach(item => con.removeChild(item))
+    darkness = 1;
 }
 
 let btn = document.querySelector('button');
