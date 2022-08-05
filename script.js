@@ -3,16 +3,23 @@ let con = document.querySelector('.container');
 
 let start = function (side) {
     let size = 900 / side + 'px';
-    for (let vert = 0; vert < side; vert ++) {
-    for (i = 0; i < side; i ++) {
-        let div = document.createElement('div');
-        div.style.width = size;
-        div.style.height = size;
-        div.classList.add('sq');
-        con.appendChild(div);
+    for (let vert = 0; vert < side; vert++) {
+        for (i = 0; i < side; i++) {
+            let div = document.createElement('div');
+            div.style.width = size;
+            div.style.height = size;
+            div.classList.add('sq');
+            con.appendChild(div);
+        }
     }
+    return
 }
-return
+
+let colorPicker = function () {
+    let red = Math.floor(Math.random() * 256);
+    let green = Math.floor(Math.random() * 256);
+    let blue = Math.floor(Math.random() * 256);
+    return `rgb(${red}, ${green}, ${blue})`;
 }
 
 let draw = function () {
@@ -26,16 +33,15 @@ let reset = function () {
 }
 
 let btn = document.querySelector('button');
-    btn.addEventListener('click', () => {
+btn.addEventListener('click', () => {
     reset();
     let side = prompt('how many sqares do you want one side to have? (max 100)');
-    if (typeof(side === 'number') && side <= 100) start(side);
+    if (typeof (side === 'number') && side <= 100) start(side);
     else alert('enter correct number');
     draw();
     return;
 })
 
-
 let changeColor = function () {
-    this.classList.add('red')
+    this.style.backgroundColor = colorPicker();
 }

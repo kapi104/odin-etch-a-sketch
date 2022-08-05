@@ -11,7 +11,7 @@ body {
 }
 
 .sq {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     height: 50px;
     width: 50px;
     border: 1px solid black;
