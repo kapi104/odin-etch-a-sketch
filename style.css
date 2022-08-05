@@ -1,0 +1,21 @@
+body {
+    background-color: grey;
+}
+
+.container {
+    background-color: darkblue;
+    max-width: fit-content;
+    height: 832px;
+}
+
+.sq {
+    width: 50px;
+    height: 50px;
+    background-color: blueviolet;
+    margin: 1px;
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
